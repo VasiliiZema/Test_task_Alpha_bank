@@ -34,8 +34,7 @@ services:
                sleep 2 &&
                airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@example.com &&
                airflow connections add 'spark_default' --conn-type 'spark' --conn-host 'local' --conn-extra '{\"queue\": \"default\", \"deploy-mode\": \"client\", \"spark-home\": \"/opt/spark\", \"spark-binary\": \"spark-submit\", \"namespace\": \"default\", \"master\": \"local[*]\"}' &&
-               airflow connections add 'postgres_default' --conn-type 'postgres' --conn-host 'postgres' --conn-port '5432' &&
-               
+               airflow connections add 'postgres_default' --conn-type 'postgres' --conn-host 'postgres' --conn-schema '${POSTGRES_DB:-airflow}' --conn-login '${POSTGRES_USER:-airflow}' --conn-password '${POSTGRES_PASSWORD:-airflow}' --conn-port '${POSTGRES_PORT_IN:-5432}' &&
                mkdir -p /usr/local/airflow/logs"
 
   airflow-webserver:
