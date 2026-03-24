@@ -5,3 +5,6 @@ CREATE SCHEMA IF NOT EXISTS mart;
 GRANT ALL ON SCHEMA raw TO airflow;
 GRANT ALL ON SCHEMA stage TO airflow;
 GRANT ALL ON SCHEMA mart TO airflow;
+
+
+select * from raw.raw_2020
