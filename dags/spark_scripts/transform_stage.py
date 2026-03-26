@@ -58,7 +58,7 @@ def main():
     
     print(f"Found {len(date_columns)} date columns")
     
-    # КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: экранируем имена колонок с точками
+    # Экранируем имена колонок с точками
     # Создаем список колонок с экранированными именами
     escaped_columns = []
     for col_name in date_columns:
